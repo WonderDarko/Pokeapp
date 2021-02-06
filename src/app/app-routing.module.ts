@@ -10,6 +10,30 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'star-wars',
+    loadChildren: () => import('./star-wars/star-wars.module').then( m => m.StarWarsPageModule)
+  },
+  {
+    path: 'lights',
+    loadChildren: () => import('./lights/lights.module').then( m => m.LightsPageModule)
+  },
+  {
+    path: 'people',
+    loadChildren: () => import('./people/people.module').then( m => m.PeoplePageModule)
+  },
+  {
+    path: 'films',
+    loadChildren: () => import('./films/films.module').then( m => m.FilmsPageModule)
+  },
+  {
+    path: 'vehicles',
+    loadChildren: () => import('./vehicles/vehicles.module').then( m => m.VehiclesPageModule)
+  },
+  {
+    path: 'starships',
+    loadChildren: () => import('./starships/starships.module').then( m => m.StarshipsPageModule)
   }
 ];
 

@@ -4,21 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { PeoplePageRoutingModule } from './people-routing.module';
 
-import { FolderPage } from './folder.page';
+import { PeoplePage } from './people.page';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SharedModule } from '../shared/shared.module';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule,
+    PeoplePageRoutingModule,
     MatProgressSpinnerModule,
     SharedModule
   ],
-  declarations: [FolderPage]
+  declarations: [PeoplePage]
 })
-export class FolderPageModule {}
+export class PeoplePageModule {}
