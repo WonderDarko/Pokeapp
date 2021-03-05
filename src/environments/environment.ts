@@ -23,6 +23,16 @@ export const environment = {
     person: {
       id: 'people/_id_/',
     }
+  },
+
+  firebaseConfig:{
+    apiKey: "AIzaSyBTiEXNTkhzs5M5b-rX3wlm-1RW9JlInQM",
+    authDomain: "ioniciotnodemcu-fb9d6.firebaseapp.com",
+    projectId: "ioniciotnodemcu-fb9d6",
+    storageBucket: "ioniciotnodemcu-fb9d6.appspot.com",
+    messagingSenderId: "931017363466",
+    appId: "1:931017363466:web:5f0f966cfcfde492980ff3",
+    measurementId: "G-ZZZKPSB77S"
   }
 };
 

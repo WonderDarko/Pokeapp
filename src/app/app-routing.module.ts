@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./star-wars/star-wars.module').then( m => m.StarWarsPageModule)
   },
   {
-    path: 'lights',
+    path: 'lights/:id',
     loadChildren: () => import('./lights/lights.module').then( m => m.LightsPageModule)
   },
   {
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'starships',
     loadChildren: () => import('./starships/starships.module').then( m => m.StarshipsPageModule)
+  },
+  {
+    path: 'statistics',
+    loadChildren: () => import('./statistics/statistics.module').then( m => m.StatisticsPageModule)
   }
 ];
 
