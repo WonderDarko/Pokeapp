@@ -21,12 +21,17 @@ export class StatisticsPage implements OnInit {
       for (let index = 0; index < this.daysResp.length-3; index++) {
         this.days.push(this.daysResp[index]);
       }
-      this.createBarChart(this.days);
+      
     });
   }
 
   ngOnInit() {
   }
+
+  ionViewDidEnter() {
+    this.createBarChart(this.days);
+  }
+
 
 
   async createBarChart(days: any){

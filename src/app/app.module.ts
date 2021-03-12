@@ -15,7 +15,9 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+//import { OneSignal} from '@ionic-native/onesignal/ngx';
 
+//06bd2ae0-868e-4ccc-bafb-0b0b6893105b idonesignal
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,11 +28,12 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     HttpClientModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    //OneSignal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

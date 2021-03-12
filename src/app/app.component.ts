@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { OneSignal } from "@ionic-native/onesignal/ngx";
 
 @Component({
   selector: 'app-root',
@@ -28,8 +30,8 @@ export class AppComponent implements OnInit {
       icon: 'flashlight'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
+      title: 'Temp&Hum',
+      url: '/tem-hum',
       icon: 'archive'
     },
     {
@@ -48,7 +50,9 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    //private oneSignal: OneSignal,
+    //private alertController: AlertController
   ) {
     this.initializeApp();
   }
@@ -57,8 +61,30 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      // if(this.platform.is('cordova')){
+      //   this.setUpPush();
+      // }
     });
   }
+
+  // setUpPush(){
+  //   this.oneSignal.startInit('06bd2ae0-868e-4ccc-bafb-0b0b6893105b', '931017363466');
+
+  //   this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
+
+  //   this.oneSignal.handleNotificationReceived().subscribe(data=>{
+  //     const msg = data.payload.body;
+  //     const title = data.payload.title;
+  //     const additionalData = data.payload.additionalData;
+  //     this.showAlert(title, msg, additionalData.task );
+  //   });
+  //   this.oneSignal.handleNotificationOpened().subscribe(data=>{
+  //     const additionalData = data.notification.payload.additionalData;
+  //     this.showAlert('Notification Openeded', 'You alaready read this before', additionalData);
+  //   });
+  //   this.oneSignal.endInit();
+  // }
 
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
@@ -66,4 +92,19 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
+  // async showAlert(title, msg, task){
+  //   const alert = await this.alertController.create({
+  //     header: title,
+  //     subHeader: msg,
+  //     buttons: [
+  //       {
+  //         text: `Action: ${task}`,
+  //         handler: ()=> {
+  //           //
+  //         }
+  //       }
+  //     ]
+  //   })
+  // }
 }

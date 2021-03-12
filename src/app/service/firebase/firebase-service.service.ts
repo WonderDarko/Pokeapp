@@ -56,4 +56,12 @@ export class FirebaseServiceService {
     }));
   }
 
+  getTemperature(){
+    return this.firebase.database.ref('/Casa').child('temperatura');
+  }
+
+  getHumedity(){
+    return this.firebase.database.ref('/Casa').child('humedad');
+  }
+
 }

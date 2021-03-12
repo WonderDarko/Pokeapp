@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'statistics',
     loadChildren: () => import('./statistics/statistics.module').then( m => m.StatisticsPageModule)
+  },
+  {
+    path: 'tem-hum',
+    loadChildren: () => import('./tem-hum/tem-hum.module').then( m => m.TemHumPageModule)
   }
 ];
 
